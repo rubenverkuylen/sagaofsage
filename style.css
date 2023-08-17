@@ -1,9 +1,10 @@
 /* reset/normalizer by https://piccalil.li/blog/a-modern-css-reset/ */
 :root {
   --color-primary: #000000;
-  --color-secondary: rgb(187, 187, 255);
+  --color-secondary: rgb(210, 210, 255);
   --color-third: rgb(255, 255, 255);
   --padding: 1em;
+  --gap: calc(2 * var(--padding));
   --font-family: Helvetica, sans-serif;
 }
 
@@ -114,7 +115,7 @@ header {
 
 .grid {
   display: grid;
-  gap: var(--padding);
+  gap: var(--gap);
   border-radius: 2em;
   padding: var(--padding);
   background-color: var(--color-secondary);
@@ -161,6 +162,32 @@ footer button {
   margin-top: 0;
 }
 
+#social ul {
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: space-around; */
+}
+
+#social li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#social li a {
+  padding: 4px 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--color-primary);
+  background-color: var(--color-third);
+  opacity: 0.5;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+#social li a:hover {
+  opacity: 1;
+}
+
 .role,
 .name {
   display: inline-block;
@@ -171,9 +198,29 @@ footer button {
 }
 
 #partners ul {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(4, auto);
-  gap: 2em;
+  gap: 2em; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  /* padding: 0;
+  margin: 0;
+  list-style: none; */
+}
+
+.partner {
+  padding: 5px;
+  width: 100px;
+  /* height: 150px; */
+  margin-top: 10px;
+  text-align: center;
+}
+
+.partner-name {
+  padding-top: 5px;
+  font-size: 0.7em;
+  line-height: 1;
 }
 
 /* MEDIAQUERIES */
