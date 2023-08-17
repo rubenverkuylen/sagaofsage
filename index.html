@@ -26,18 +26,31 @@
     />
   </head>
   <body>
-    <!-- <nav>
-      <button>menu</button>
-    </nav> -->
+    <nav id="menu-open">
+      <nav id="menu-close">
+        <button>close</button>
+      </nav>
+      <nav class="int-nav">
+        <a href="#about">About</a>
+        <a href="#episode">Mission 1</a>
+        <a href="#social">Socials</a>
+        <a href="#colophon">Colophon</a>
+        <a href="#partners">Partners</a>
+      </nav>
+    </nav>
     <header>
       <div id="logo-sos" class="logo">
         <img src="assets/images/logo-sos.svg" alt="The Saga of Sage" />
       </div>
-      <div id="logo-ade" class="logo">
-        <a href="https://www.amsterdam-dance-event.nl/en/search/?q=saga+of+sage" target="_blank">
+      <nav id="menu">
+        <div>
+          <img src="assets/images/menu-button.svg" alt="amsterdam dance event" />
+
+        </div>
+        <!-- <a href="https://www.amsterdam-dance-event.nl/en/search/?q=saga+of+sage" target="_blank">
           <img src="assets/images/logo-ade.svg" alt="amsterdam dance event" />
-        </a>
-      </div>
+        </a> -->
+      </nav>
     </header>
     <main class="grid">
       <section id="about" class="grid-item">
@@ -159,11 +172,11 @@
               <div class="name">Robin Krijgsman</div>
             </li>
             <li>
-              <div class="role">Production:</div>
+              <div class="role">Production</div>
               <div class="name">Mara Liza de Bakker</div>
             </li>
             <li>
-              <div class="role">Funding partners:</div>
+              <div class="role">Funding partners</div>
               <div class="name">DigitALL, PBCF, Dioraphte</div>
             </li>
             <li>
@@ -178,7 +191,7 @@
           </div>
           <ul>
             <li class="partner">
-              <a class="partner-logo" href="https://www.amsterdam-dance-event.nl/en/search/?q=saga+of+sage" target="_blank"><img src="assets/images/logo-partner.svg" alt=""></a>
+              <a class="partner-logo" href="https://www.amsterdam-dance-event.nl/en/search/?q=saga+of+sage" target="_blank"><img src="assets/images/logo-ade.svg" alt=""></a>
               <div class="partner-name">ADE</div>
             </li>
             <li class="partner">
@@ -210,7 +223,7 @@
       </section>
     </main>
     <footer>
-      <button class="reservation">get your ticket here</button>
+      <a href="https://www.amsterdam-dance-event.nl/en/search/?q=saga+of+sage" class="reservation">get your ticket here</a>
     </footer>
     <script src="script.js"></script>
   </body>

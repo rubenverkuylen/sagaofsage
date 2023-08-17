@@ -3,6 +3,7 @@
   --color-primary: #000000;
   --color-secondary: rgb(210, 210, 255);
   --color-third: rgb(255, 255, 255);
+  --color-light-grey: rgb(232, 232, 232);
   --padding: 1em;
   --gap: calc(2 * var(--padding));
   --font-family: Helvetica, sans-serif;
@@ -100,17 +101,9 @@ select {
 
 /* GENERAL */
 header {
-  display: flex;
-  justify-content: space-between;
-}
-
-#logo-sos {
-  width: 100%;
-  padding: 0 2em;
-}
-
-#logo-ade {
-  width: calc(3 * var(--padding));
+  display: grid;
+  grid-template-columns: 12fr 1fr;
+  gap: calc(4 * var(--padding));
 }
 
 .grid {
@@ -119,27 +112,59 @@ header {
   border-radius: 2em;
   padding: var(--padding);
   background-color: var(--color-secondary);
-  box-shadow: 0px 0px 10px 10px var(--color-secondary);
+  /* box-shadow: 0px 0px 10px 10px var(--color-secondary); */
 }
 
 footer {
   position: fixed;
-  bottom: var(--padding);
+  bottom: calc(2 * var(--padding));
   left: 0;
   width: 100%;
 }
 
-footer button {
+.reservation {
   padding: 0.5em 0;
   border-radius: 1em;
   border: none;
   font-size: 1.4em;
+  text-align: center;
+  background: var(--color-light-grey);
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: 0.2s;
+}
+
+.reservation:hover {
+  background: var(--color-third);
+}
+
+#menu-open {
+  display: none;
+  position: fixed;
+  background: var(--color-light-grey);
+  height: 100vh;
+  width: 100%;
+  border-radius: 20px;
+  z-index: 99;
+  left: 0;
+  top: 0;
+}
+
+.int-nav {
+  display: grid;
+  font-size: 2em;
+}
+
+.int-nav a {
+  justify-self: center;
+}
+
+#menu-close {
+  position: absolute;
+  right: 0;
 }
 
 /* ABOUT */
-#about {
-  font-size: 1.6em;
-}
 
 /* EPISODE */
 #episode .section-header {
@@ -178,14 +203,13 @@ footer button {
   border-radius: 8px;
   text-decoration: none;
   color: var(--color-primary);
-  background-color: var(--color-third);
-  opacity: 0.5;
+  background-color: var(--color-light-grey);
   text-decoration: none;
   transition: 0.2s;
 }
 
 #social li a:hover {
-  opacity: 1;
+  background-color: var(--color-third);
 }
 
 .role,
@@ -212,9 +236,14 @@ footer button {
 .partner {
   padding: 5px;
   width: 100px;
-  /* height: 150px; */
   margin-top: 10px;
   text-align: center;
+  filter: grayscale(1);
+}
+
+.partner:hover {
+  filter: grayscale(0);
+  transition: 0.2s;
 }
 
 .partner-name {
@@ -229,11 +258,14 @@ footer button {
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  #about {
+    font-size: 1.6em;
+  }
   footer {
     display: flex;
     justify-content: center;
   }
-  footer button {
+  .reservation {
     width: calc(100vw / 3);
   }
 }
@@ -248,11 +280,14 @@ footer button {
   main {
     margin-bottom: 4em;
   }
+  #about {
+    font-size: 1.2em;
+  }
   footer {
     padding: 0 var(--padding);
     bottom: var(--padding);
   }
-  footer button {
+  .reservation {
     display: block;
     width: 100%;
   }
