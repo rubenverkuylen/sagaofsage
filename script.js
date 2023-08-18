@@ -1,7 +1,9 @@
 "use strict";
-const menu = document.getElementById("menu-open");
-const menuOpen = document.getElementById("menu");
-const menuClose = document.getElementById("menu-close");
+const menu = document.getElementById("menu");
+const menuOpen = document.getElementById("menu-toggle-open");
+const menuClose = document.getElementById("menu-toggle-close");
+const menuInt = document.getElementById("int-nav").querySelectorAll("a");
+const reservation = document.getElementById("reservation");
 
 // EMAIL ENCODER
 var encEmail = "aW5mb0B0aGVzYWdhb2ZzYWdlLmNvbQ==";
@@ -10,12 +12,35 @@ form.setAttribute("href", "mailto:".concat(atob(encEmail)));
 
 // OPEN MENU
 function openMenu() {
-  menu.style.display = "block";
+  menu.classList.add("toggle-open");
+  document.body.style.overflowY = "hidden";
 }
 
 function closeMenu() {
-  menu.style.display = "none";
+  menu.classList.remove("toggle-open");
+  document.body.style.overflowY = "visible";
 }
+
+menuInt.forEach((btn) => {
+  btn.addEventListener("click", closeMenu);
+});
 
 menuOpen.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);
+
+function changeBtnText() {
+  const action = "click here for reservation";
+  const date = "October 8th 2023";
+  const attr = reservation.getAttribute("information");
+  if (attr === "action") {
+    reservation.innerHTML = date;
+    reservation.setAttribute("information", "date");
+  } else {
+    reservation.innerHTML = action;
+    reservation.setAttribute("information", "action");
+  }
+}
+
+setInterval(() => {
+  changeBtnText();
+}, 4000);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css?ver=0.3" />
+    <link rel="stylesheet" href="style.css?ver=0.1" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
     <title>The Saga of Sage — Mission 1: Defrost</title>
     <meta name="description" content="The Saga of Sage" />
@@ -26,30 +26,35 @@
     />
   </head>
   <body>
-    <nav id="menu-open">
-      <nav id="menu-close">
-        <button>close</button>
+    <nav id="menu">
+      <nav id="menu-toggle-close">
+        <img src="assets/images/menu-toggle-close.svg" alt="menu toggle close" />
       </nav>
-      <nav class="int-nav">
+      <nav id="int-nav" class="menu-nav">
         <a href="#about">About</a>
         <a href="#episode">Mission 1</a>
         <a href="#social">Socials</a>
         <a href="#colophon">Colophon</a>
         <a href="#partners">Partners</a>
       </nav>
+      <nav id="ext-nav" class="menu-nav">
+          <a href="" target="_blank">Instagram</a>
+          <a href="" target="_blank">Twitter</a>
+          <a href="" target="_blank">Facebook</a>
+          <a href="" target="_blank">TikTok</a>
+          <a href="" target="_blank">Spotify</a>
+          <a href="" target="_blank">Twitch</a>
+          <a href="" target="_blank">Discord</a>
+      </nav>
     </nav>
     <header>
       <div id="logo-sos" class="logo">
         <img src="assets/images/logo-sos.svg" alt="The Saga of Sage" />
       </div>
-      <nav id="menu">
+      <nav id="menu-toggle-open">
         <div>
-          <img src="assets/images/menu-button.svg" alt="amsterdam dance event" />
-
+          <img src="assets/images/menu-toggle-open.svg" alt="menu toggle" />
         </div>
-        <!-- <a href="https://www.amsterdam-dance-event.nl/en/search/?q=saga+of+sage" target="_blank">
-          <img src="assets/images/logo-ade.svg" alt="amsterdam dance event" />
-        </a> -->
       </nav>
     </header>
     <main class="grid">
@@ -223,7 +228,7 @@
       </section>
     </main>
     <footer>
-      <a href="https://www.amsterdam-dance-event.nl/en/search/?q=saga+of+sage" class="reservation">get your ticket here</a>
+      <a href="https://www.amsterdam-dance-event.nl/en/search/?q=saga+of+sage" information="action" id="reservation">get your ticket here</a>
     </footer>
     <script src="script.js"></script>
   </body>
