@@ -8,6 +8,7 @@
   --color-light-grey: rgb(232, 232, 232);
   --color-dark-grey: rgb(174, 174, 174);
   --font-family: SlimbachStd, Georgia, serif;
+  --font-family-sans: Arial, sans-serif;
   --padding: 1em;
   --gap: calc(2 * var(--padding));
   --radius: 16px;
@@ -76,6 +77,10 @@ body {
   line-height: 1.5;
   padding: var(--padding);
   background-color: var(--color-black);
+}
+
+footer {
+  font-family: var(--font-family-sans);
 }
 
 /* A elements that don't have a class get default styles */
@@ -148,11 +153,13 @@ footer {
   padding: 0.5em 0;
   border-radius: var(--radius);
   border: none;
-  background: var(--color-third);
+  background: var(--color-dark-grey);
   color: var(--color-black);
   font-size: 1.4em;
   text-align: center;
   text-decoration: none;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0, 0.51, 0.99, 0.55);
 }
 
 #reservation:hover {
@@ -239,15 +246,16 @@ footer {
 #episode .section-header {
   text-align: center;
   margin-bottom: 2em;
+  margin-top: 3em;
 }
 
 #episode-header h2 {
-  font-size: 2em;
+  font-size: 3em;
 }
 
 #episode-header h2:first-child {
   font-weight: 100;
-  margin-bottom: -5px;
+  margin-bottom: -0.25em;
 }
 
 .header-meta {
@@ -347,6 +355,9 @@ footer {
   }
   .grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-item {
+    margin-bottom: 4em;
   }
   #about {
     font-size: 1.6em;

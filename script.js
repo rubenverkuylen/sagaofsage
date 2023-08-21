@@ -30,7 +30,7 @@ menuClose.addEventListener("click", closeMenu);
 
 function changeBtnText() {
   const action = "reserve here";
-  const date = "October 8th 2023";
+  const date = "October 18th 2023";
   const attr = reservation.getAttribute("information");
   if (attr === "action") {
     reservation.innerHTML = date;
@@ -39,6 +39,7 @@ function changeBtnText() {
     reservation.innerHTML = action;
     reservation.setAttribute("information", "action");
   }
+  reservation.style.background = "var(--color-third)";
 }
 
 setInterval(() => {
