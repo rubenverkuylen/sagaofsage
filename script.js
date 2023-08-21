@@ -6,7 +6,7 @@ const menuInt = document.getElementById("int-nav").querySelectorAll("a");
 const reservation = document.getElementById("reservation");
 
 // EMAIL ENCODER
-var encEmail = "aW5mb0B0aGVzYWdhb2ZzYWdlLmNvbQ==";
+var encEmail = "c29zQHRoZXNhZ2FvZnNhZ2UuY29t";
 const form = document.getElementById("contact");
 form.setAttribute("href", "mailto:".concat(atob(encEmail)));
 
@@ -29,7 +29,7 @@ menuOpen.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);
 
 function changeBtnText() {
-  const action = "click here for reservation";
+  const action = "reserve here";
   const date = "October 8th 2023";
   const attr = reservation.getAttribute("information");
   if (attr === "action") {
@@ -43,4 +43,4 @@ function changeBtnText() {
 
 setInterval(() => {
   changeBtnText();
-}, 4000);
+}, 3000);

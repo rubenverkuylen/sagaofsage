@@ -1,17 +1,32 @@
 /* reset/normalizer by https://piccalil.li/blog/a-modern-css-reset/ */
 :root {
-  --color-primary: #000000;
-  --color-secondary: rgb(210, 210, 255);
-  --color-third: rgb(255, 255, 255);
+  --color-primary: #330d69;
+  --color-secondary: #30c8cd;
+  --color-third: #2dff5b;
+  --color-white: rgb(255, 255, 255);
+  --color-black: rgb(0, 0, 0);
   --color-light-grey: rgb(232, 232, 232);
+  --color-dark-grey: rgb(174, 174, 174);
+  --font-family: SlimbachStd, Georgia, serif;
   --padding: 1em;
   --gap: calc(2 * var(--padding));
-  --font-family: Helvetica, sans-serif;
+  --radius: 16px;
 }
 
 @font-face {
-  font-family: Sligoil;
-  src: url("assets/fonts/Sligoil-Micro.woff2") format("woff2");
+  font-family: "SlimbachStd";
+  src: url("assets/fonts/SlimbachStd-Book.otf") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SlimbachStd";
+  src: url("assets/fonts/SlimbachStd-Bold.otf") format("woff");
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
 }
 
 /* Box sizing rules */
@@ -60,7 +75,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   padding: var(--padding);
-  background-color: var(--color-primary);
+  background-color: var(--color-black);
 }
 
 /* A elements that don't have a class get default styles */
@@ -102,18 +117,23 @@ select {
 /* GENERAL */
 header {
   display: grid;
-  /* grid-template-columns: 12fr 1fr; */
   gap: calc(4 * var(--padding));
   padding: var(--padding);
+  position: relative;
+  z-index: 2;
+}
+
+#content {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  padding: calc(2 * var(--padding));
+  position: relative;
+  z-index: 1;
 }
 
 .grid {
   display: grid;
   gap: var(--gap);
-  border-radius: 2em;
-  padding: var(--padding);
-  background-color: var(--color-secondary);
-  /* box-shadow: 0px 0px 10px 10px var(--color-secondary); */
 }
 
 footer {
@@ -121,35 +141,38 @@ footer {
   bottom: calc(2 * var(--padding));
   left: 0;
   width: 100%;
+  z-index: 2;
 }
 
 #reservation {
   padding: 0.5em 0;
-  border-radius: 1em;
+  border-radius: var(--radius);
   border: none;
+  background: var(--color-third);
+  color: var(--color-black);
   font-size: 1.4em;
   text-align: center;
-  background: var(--color-light-grey);
   text-decoration: none;
-  color: var(--color-primary);
-  transition: 0.2s;
 }
 
 #reservation:hover {
-  background: var(--color-third);
+  background: var(--color-light-grey);
 }
 
 #menu {
-  /* display: none; */
   position: fixed;
-  background: var(--color-light-grey);
+  background: var(--color-dark-grey);
   height: 100vh;
   width: 100%;
-  /* border-radius: 0px; */
   z-index: 99;
   left: 200vw;
   top: 0;
   transition: 0.3s;
+}
+
+#menu-toggle-close,
+#menu-toggle-open {
+  cursor: pointer;
 }
 
 #menu-toggle-close {
@@ -162,31 +185,52 @@ footer {
 .toggle-open {
   transition: 0.3s;
   transform: translateX(-200vw);
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 
 .menu-nav {
   display: grid;
-  margin-top: 2em;
+  margin-top: 3em;
+  margin-left: 3em;
 }
 
 .menu-nav a {
-  justify-self: center;
-  color: var(--color-primary);
-  opacity: 0.5;
   text-decoration: none;
+  font-size: 1.75em;
+  color: var(--color-black);
 }
 
 .menu-nav a:hover {
-  opacity: 1;
+  color: var(--color-third);
 }
 
-#int-nav {
-  font-size: 2em;
+#int-nav a {
+  font-weight: 700;
 }
 
-#ext-nav {
-  font-size: 1.25em;
+#background {
+  position: fixed;
+  top: 0;
+  z-index: 0;
+}
+
+#background img {
+  width: 100vw;
+  height: 100vh;
+  animation-name: blurring;
+  animation-duration: 10s;
+  transition-timing-function: cubic-bezier(0, 0.51, 0.99, 0.55);
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blurring {
+  0% {
+    filter: blur(100px) contrast(1);
+  }
+  100% {
+    filter: blur(20px) contrast(3);
+  }
 }
 
 /* ABOUT */
@@ -197,9 +241,27 @@ footer {
   margin-bottom: 2em;
 }
 
+#episode-header h2 {
+  font-size: 2em;
+}
+
+#episode-header h2:first-child {
+  font-weight: 100;
+  margin-bottom: -5px;
+}
+
+.header-meta {
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+.location a {
+  color: var(--color-black);
+}
+
 /* INFORMATION */
 #information > div {
-  border-top: 1px solid var(--color-primary);
+  border-top: 1px solid var(--color-dark-grey);
   padding-top: 1em;
 }
 
@@ -225,16 +287,16 @@ footer {
 
 #social li a {
   padding: 4px 6px;
-  border-radius: 8px;
+  border-radius: calc(var(--radius) / 2);
   text-decoration: none;
-  color: var(--color-primary);
-  background-color: var(--color-light-grey);
+  color: var(--color-black);
+  background-color: var(--color-third);
   text-decoration: none;
   transition: 0.2s;
 }
 
 #social li a:hover {
-  background-color: var(--color-third);
+  background-color: var(--color-light-grey);
 }
 
 .role,
@@ -247,15 +309,9 @@ footer {
 }
 
 #partners ul {
-  /* display: grid;
-  grid-template-columns: repeat(4, auto);
-  gap: 2em; */
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  /* padding: 0;
-  margin: 0;
-  list-style: none; */
 }
 
 .partner {
@@ -264,14 +320,17 @@ footer {
   margin-top: 10px;
   text-align: center;
   filter: grayscale(1);
+  opacity: 0.6;
 }
 
 .partner:hover {
   filter: grayscale(0);
+  opacity: 1;
   transition: 0.2s;
 }
 
 .partner-name {
+  display: none;
   padding-top: 5px;
   font-size: 0.7em;
   line-height: 1;
@@ -317,8 +376,11 @@ footer {
   main {
     margin-bottom: 4em;
   }
+  .grid-item {
+    margin-bottom: 2em;
+  }
   #about {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
   footer {
     bottom: 0;
