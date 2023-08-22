@@ -29,7 +29,7 @@ menuOpen.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);
 
 function changeBtnText() {
-  const action = "reserve here";
+  const action = "Click for tickets";
   const date = "October 18th 2023";
   const attr = reservation.getAttribute("information");
   if (attr === "action") {
