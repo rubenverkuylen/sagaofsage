@@ -24,8 +24,24 @@
 
 @font-face {
   font-family: "SlimbachStd";
+  src: url("assets/fonts/SlimbachStd-BookItalic.otf") format("woff");
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SlimbachStd";
   src: url("assets/fonts/SlimbachStd-Bold.otf") format("woff");
   font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SlimbachStd";
+  src: url("assets/fonts/SlimbachStd-BoldItalic.otf") format("woff");
+  font-style: italic;
   font-weight: bold;
   font-display: swap;
 }
@@ -198,6 +214,7 @@ footer {
   display: grid;
   margin-top: 3em;
   margin-left: 3em;
+  line-height: 1.4;
 }
 
 .menu-nav a {
@@ -309,6 +326,10 @@ footer {
 .role,
 .name {
   display: inline;
+}
+
+.role {
+  font-style: italic;
 }
 
 .role::after {
