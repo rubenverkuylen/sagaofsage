@@ -2,28 +2,30 @@
 
 General
 
-- Header beter ontwerpen
+<!-- - Header beter ontwerpen -->
+
 - Big screen verhoudingen
 
 Menu
 
-- Geen ronde hoeken
-- Strakkere opmaak
+<!-- - Geen ronde hoeken -->
+<!-- - Strakkere opmaak -->
 
 Footer
 
-- Button iets meer gebalanceerd opmaken
+<!-- - Button iets meer gebalanceerd opmaken -->
 
 Partners
 
-- Logo's verticaal centreren
+<!-- - Logo's verticaal centreren -->
 
 Copy
 
-- Alle links toevoegen
+<!-- - Alle links toevoegen -->
+
 - Meta info aanvullen
-- Tekst aanpassen
-- Juiste logo's
+  <!-- - Tekst aanpassen -->
+  <!-- - Juiste logo's -->
 
 <!-- HACK -->
 
